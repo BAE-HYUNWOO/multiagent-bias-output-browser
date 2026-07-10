@@ -7,10 +7,25 @@ import type {
   SiteConfig,
 } from '../types'
 
+export function withBase(path: string): string {
+  if (
+    path.startsWith('http://') ||
+    path.startsWith('https://') ||
+    path.startsWith('data:') ||
+    path.startsWith('blob:')
+  ) {
+    return path
+  }
+
+  const cleanPath = path.replace(/^\.?\//, '')
+  return `${import.meta.env.BASE_URL}${cleanPath}`
+}
+
 async function fetchJson<T>(path: string): Promise<T> {
-  const response = await fetch(path, { cache: 'no-store' })
+  const resolvedPath = withBase(path)
+  const response = await fetch(resolvedPath, { cache: 'no-store' })
   if (!response.ok) {
-    throw new Error(`데이터를 불러오지 못했습니다: ${path} (${response.status})`)
+    throw new Error(`데이터를 불러오지 못했습니다: ${resolvedPath} (${response.status})`)
   }
   return response.json() as Promise<T>
 }

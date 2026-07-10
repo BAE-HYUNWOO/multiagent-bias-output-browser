@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { loadDownloadManifest, loadSiteConfig } from '../lib/data'
+import { loadDownloadManifest, loadSiteConfig, withBase } from '../lib/data'
 import type { DownloadManifest, SiteConfig } from '../types'
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -57,7 +57,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <Link className="header-home-button" to="/">Home</Link>
             </div>
           ) : manifest?.all_processed ? (
-            <a className="header-download-button" href={manifest.all_processed} download>
+            <a className="header-download-button" href={withBase(manifest.all_processed)} download>
               Download
             </a>
           ) : null}

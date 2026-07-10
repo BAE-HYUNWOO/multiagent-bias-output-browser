@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { ErrorView, LoadingView } from '../components/StatusView'
-import { loadDatasetIndex, loadRootIndex } from '../lib/data'
+import { loadDatasetIndex, loadRootIndex, withBase } from '../lib/data'
 import type { DatasetIndex } from '../types'
 
 export default function DatasetPage() {
@@ -39,7 +39,7 @@ export default function DatasetPage() {
           </p>
         </div>
         {dataset.download ? (
-          <a className="secondary-button" href={dataset.download} download>
+          <a className="secondary-button" href={withBase(dataset.download)} download>
             Download {dataset.label}
           </a>
         ) : null}
