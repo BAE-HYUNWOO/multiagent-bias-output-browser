@@ -1,13 +1,18 @@
-이 패치는 npm install 없이 UI를 실행하기 위한 정적 빌드입니다.
+This patch provides a static build that can run without `npm install`.
 
-1. 기존 프로젝트 루트에 패치 내용을 덮어씁니다.
-2. 데이터가 아직 생성되지 않았다면:
+1. Extract the patch contents into the existing project root and overwrite matching files.
+2. If the browser data has not been generated yet, run:
+
    powershell -ExecutionPolicy Bypass -File ".\scripts\rebuild_data.ps1"
-3. UI 실행:
+
+3. Start the UI:
+
    powershell -ExecutionPolicy Bypass -File ".\scripts\run_static.ps1"
 
-브라우저 주소: http://localhost:5173
-종료: PowerShell 창에서 Ctrl+C
+Browser URL: http://localhost:5173
 
-새 결과를 source_data에 추가한 뒤에는 아래 하나만 실행해도 됩니다:
+To stop the server, press Ctrl+C in the PowerShell window.
+
+After adding new results under `source_data`, you can rebuild the data and restart the UI with:
+
    powershell -ExecutionPolicy Bypass -File ".\scripts\rebuild_and_run_static.ps1"
