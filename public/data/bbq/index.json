@@ -1,0 +1,194 @@
+{
+  "dataset": "BBQ",
+  "label": "BBQ",
+  "category_count": 11,
+  "pair_count": 220,
+  "item_count": 420,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": "/downloads/bbq.zip",
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/bbq/age/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/age.zip"
+    },
+    {
+      "name": "Disability_status",
+      "slug": "disability-status",
+      "path": "/data/bbq/disability-status/index.json",
+      "pair_count": 20,
+      "item_count": 20,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/disability-status.zip"
+    },
+    {
+      "name": "Gender_identity",
+      "slug": "gender-identity",
+      "path": "/data/bbq/gender-identity/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/gender-identity.zip"
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/bbq/nationality/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/nationality.zip"
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/bbq/physical-appearance/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/physical-appearance.zip"
+    },
+    {
+      "name": "Race_ethnicity",
+      "slug": "race-ethnicity",
+      "path": "/data/bbq/race-ethnicity/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/race-ethnicity.zip"
+    },
+    {
+      "name": "Race_x_SES",
+      "slug": "race-x-ses",
+      "path": "/data/bbq/race-x-ses/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/race-x-ses.zip"
+    },
+    {
+      "name": "Race_x_gender",
+      "slug": "race-x-gender",
+      "path": "/data/bbq/race-x-gender/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/race-x-gender.zip"
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/bbq/religion/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/religion.zip"
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/bbq/ses/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/ses.zip"
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/bbq/sexual-orientation/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/bbq/sexual-orientation.zip"
+    }
+  ]
+}

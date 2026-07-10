@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-07-10T07:51:18.756459+00:00",
+  "all_processed": "/downloads/all_processed_results.zip",
+  "all_source_outputs": null,
+  "datasets": {
+    "BBQ": {
+      "file": "/downloads/bbq.zip",
+      "categories": {
+        "Age": "/downloads/bbq/age.zip",
+        "Disability_status": "/downloads/bbq/disability-status.zip",
+        "Gender_identity": "/downloads/bbq/gender-identity.zip",
+        "Nationality": "/downloads/bbq/nationality.zip",
+        "Physical_appearance": "/downloads/bbq/physical-appearance.zip",
+        "Race_ethnicity": "/downloads/bbq/race-ethnicity.zip",
+        "Race_x_SES": "/downloads/bbq/race-x-ses.zip",
+        "Race_x_gender": "/downloads/bbq/race-x-gender.zip",
+        "Religion": "/downloads/bbq/religion.zip",
+        "SES": "/downloads/bbq/ses.zip",
+        "Sexual_orientation": "/downloads/bbq/sexual-orientation.zip"
+      }
+    },
+    "CBBQ": {
+      "file": "/downloads/cbbq.zip",
+      "categories": {
+        "Age": "/downloads/cbbq/age.zip",
+        "Nationality": "/downloads/cbbq/nationality.zip",
+        "Physical_appearance": "/downloads/cbbq/physical-appearance.zip",
+        "Religion": "/downloads/cbbq/religion.zip",
+        "SES": "/downloads/cbbq/ses.zip",
+        "Sexual_orientation": "/downloads/cbbq/sexual-orientation.zip",
+        "disability": "/downloads/cbbq/disability.zip",
+        "disease": "/downloads/cbbq/disease.zip",
+        "educational_qualification": "/downloads/cbbq/educational-qualification.zip",
+        "ethnicity": "/downloads/cbbq/ethnicity.zip",
+        "gender": "/downloads/cbbq/gender.zip",
+        "household_registration": "/downloads/cbbq/household-registration.zip",
+        "race": "/downloads/cbbq/race.zip",
+        "region": "/downloads/cbbq/region.zip"
+      }
+    },
+    "KoBBQ": {
+      "file": "/downloads/kobbq.zip",
+      "categories": {
+        "Age": "/downloads/kobbq/age.zip",
+        "Disability_status": "/downloads/kobbq/disability-status.zip",
+        "Domestic_area_of_origin": "/downloads/kobbq/domestic-area-of-origin.zip",
+        "Educational_background": "/downloads/kobbq/educational-background.zip",
+        "Family_structure": "/downloads/kobbq/family-structure.zip",
+        "Gender_identity": "/downloads/kobbq/gender-identity.zip",
+        "Nationality": "/downloads/kobbq/nationality.zip",
+        "Physical_appearance": "/downloads/kobbq/physical-appearance.zip",
+        "Political_orientation": "/downloads/kobbq/political-orientation.zip",
+        "Race_ethnicity": "/downloads/kobbq/race-ethnicity.zip",
+        "Race_ethnicity_nationality": "/downloads/kobbq/race-ethnicity-nationality.zip",
+        "Religion": "/downloads/kobbq/religion.zip",
+        "SES": "/downloads/kobbq/ses.zip",
+        "Sexual_orientation": "/downloads/kobbq/sexual-orientation.zip"
+      }
+    }
+  }
+}

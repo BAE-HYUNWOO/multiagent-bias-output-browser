@@ -1,0 +1,242 @@
+{
+  "dataset": "KoBBQ",
+  "label": "KoBBQ",
+  "category_count": 14,
+  "pair_count": 280,
+  "item_count": 540,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": "/downloads/kobbq.zip",
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/kobbq/age/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/age.zip"
+    },
+    {
+      "name": "Disability_status",
+      "slug": "disability-status",
+      "path": "/data/kobbq/disability-status/index.json",
+      "pair_count": 20,
+      "item_count": 20,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/disability-status.zip"
+    },
+    {
+      "name": "Domestic_area_of_origin",
+      "slug": "domestic-area-of-origin",
+      "path": "/data/kobbq/domestic-area-of-origin/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/domestic-area-of-origin.zip"
+    },
+    {
+      "name": "Educational_background",
+      "slug": "educational-background",
+      "path": "/data/kobbq/educational-background/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/educational-background.zip"
+    },
+    {
+      "name": "Family_structure",
+      "slug": "family-structure",
+      "path": "/data/kobbq/family-structure/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/family-structure.zip"
+    },
+    {
+      "name": "Gender_identity",
+      "slug": "gender-identity",
+      "path": "/data/kobbq/gender-identity/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/gender-identity.zip"
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/kobbq/nationality/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/nationality.zip"
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/kobbq/physical-appearance/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/physical-appearance.zip"
+    },
+    {
+      "name": "Political_orientation",
+      "slug": "political-orientation",
+      "path": "/data/kobbq/political-orientation/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/political-orientation.zip"
+    },
+    {
+      "name": "Race_ethnicity",
+      "slug": "race-ethnicity",
+      "path": "/data/kobbq/race-ethnicity/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/race-ethnicity.zip"
+    },
+    {
+      "name": "Race_ethnicity_nationality",
+      "slug": "race-ethnicity-nationality",
+      "path": "/data/kobbq/race-ethnicity-nationality/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/race-ethnicity-nationality.zip"
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/kobbq/religion/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/religion.zip"
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/kobbq/ses/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/ses.zip"
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/kobbq/sexual-orientation/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/kobbq/sexual-orientation.zip"
+    }
+  ]
+}

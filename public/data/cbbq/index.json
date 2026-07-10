@@ -1,0 +1,242 @@
+{
+  "dataset": "CBBQ",
+  "label": "CBBQ",
+  "category_count": 14,
+  "pair_count": 280,
+  "item_count": 520,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": "/downloads/cbbq.zip",
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/cbbq/age/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/age.zip"
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/cbbq/nationality/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/nationality.zip"
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/cbbq/physical-appearance/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/physical-appearance.zip"
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/cbbq/religion/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/religion.zip"
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/cbbq/ses/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/ses.zip"
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/cbbq/sexual-orientation/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/sexual-orientation.zip"
+    },
+    {
+      "name": "disability",
+      "slug": "disability",
+      "path": "/data/cbbq/disability/index.json",
+      "pair_count": 20,
+      "item_count": 20,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/disability.zip"
+    },
+    {
+      "name": "disease",
+      "slug": "disease",
+      "path": "/data/cbbq/disease/index.json",
+      "pair_count": 20,
+      "item_count": 20,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/disease.zip"
+    },
+    {
+      "name": "educational_qualification",
+      "slug": "educational-qualification",
+      "path": "/data/cbbq/educational-qualification/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/educational-qualification.zip"
+    },
+    {
+      "name": "ethnicity",
+      "slug": "ethnicity",
+      "path": "/data/cbbq/ethnicity/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/ethnicity.zip"
+    },
+    {
+      "name": "gender",
+      "slug": "gender",
+      "path": "/data/cbbq/gender/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/gender.zip"
+    },
+    {
+      "name": "household_registration",
+      "slug": "household-registration",
+      "path": "/data/cbbq/household-registration/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/household-registration.zip"
+    },
+    {
+      "name": "race",
+      "slug": "race",
+      "path": "/data/cbbq/race/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/race.zip"
+    },
+    {
+      "name": "region",
+      "slug": "region",
+      "path": "/data/cbbq/region/index.json",
+      "pair_count": 20,
+      "item_count": 40,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": "/downloads/cbbq/region.zip"
+    }
+  ]
+}
