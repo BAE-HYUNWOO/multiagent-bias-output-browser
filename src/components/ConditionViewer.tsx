@@ -107,7 +107,7 @@ export default function ConditionViewer({
           <div className="flow-label">Round 1</div>
           <RoundGrid stages={result.multi_agent_with_revision.stages} />
           <div className="flow-arrow">↓</div>
-          <div className="flow-label">Revision Round</div>
+          <div className="flow-label">Round 2</div>
           <div className="agent-grid three-columns">
             {revisionPairs.map(([r1, r2]) => {
               const before = stageByName(result.multi_agent_with_revision.stages, r1)
