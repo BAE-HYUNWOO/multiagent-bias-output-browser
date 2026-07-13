@@ -123,11 +123,39 @@ def canonical_dataset(value: str) -> str:
 
 
 def normalize_context_type(value: str, item_id: str = "") -> str:
-    text = f"{value} {item_id}".lower()
-    if any(token in text for token in ("disambiguated", "disambig", "_dis", "-dis", "nonamb")):
+    # 1. 명시적인 context_type 값을 우선 사용
+    context_value = value.strip().lower()
+
+    if context_value in {
+        "disambiguated",
+        "disambig",
+        "dis",
+        "nonamb",
+    }:
         return "disambiguated"
-    if any(token in text for token in ("ambiguous", "ambig", "_amb", "-amb")):
+
+    if context_value in {
+        "ambiguous",
+        "ambig",
+        "amb",
+    }:
         return "ambiguous"
+
+    # 2. context_type이 없을 때만 item_id 끝부분으로 판단
+    normalized_item_id = item_id.strip().lower()
+
+    if re.search(
+        r"(?:[_-])(?:disambiguated|disambig|dis)$",
+        normalized_item_id,
+    ):
+        return "disambiguated"
+
+    if re.search(
+        r"(?:[_-])(?:ambiguous|ambig|amb)$",
+        normalized_item_id,
+    ):
+        return "ambiguous"
+
     return "ambiguous"
 
 
