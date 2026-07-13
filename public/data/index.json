@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-10T07:51:28.494824+00:00",
+  "generated_at": "2026-07-13T03:11:52.043881+00:00",
   "datasets": [
     {
       "id": "bbq",
@@ -8,7 +8,7 @@
       "path": "/data/bbq/index.json",
       "category_count": 11,
       "pair_count": 220,
-      "item_count": 420,
+      "item_count": 440,
       "models": [
         "gemma_3_27b",
         "llama_3_3_70b",
@@ -24,7 +24,7 @@
       "path": "/data/cbbq/index.json",
       "category_count": 14,
       "pair_count": 280,
-      "item_count": 520,
+      "item_count": 560,
       "models": [
         "gemma_3_27b",
         "llama_3_3_70b",
@@ -40,7 +40,7 @@
       "path": "/data/kobbq/index.json",
       "category_count": 14,
       "pair_count": 280,
-      "item_count": 540,
+      "item_count": 560,
       "models": [
         "gemma_3_27b",
         "llama_3_3_70b",
@@ -62,7 +62,7 @@
   "totals": {
     "categories": 39,
     "pairs": 780,
-    "items": 1480,
+    "items": 1560,
     "stage_records": 84240
   }
 }
