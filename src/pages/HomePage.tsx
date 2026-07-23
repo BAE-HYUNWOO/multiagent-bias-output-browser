@@ -115,7 +115,7 @@ export default function HomePage() {
 
   return (
     <div className="page-content home-page">
-      <section className="experiment-toolbar">
+      <section className="prompt-page-heading experiment-page-heading">
         <div>
           <h1>{experiment.label}</h1>
           {PAPER_REFERENCES[experiment.id] ? (
@@ -219,4 +219,5 @@ export default function HomePage() {
     </div>
   )
 }
+
 
