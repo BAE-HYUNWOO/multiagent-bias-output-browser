@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { ErrorView, LoadingView } from '../components/StatusView'
-import { loadDatasetIndex, loadRootIndex, withBase } from '../lib/data'
+import { loadDatasetIndex, loadExperimentRootIndex, withBase } from '../lib/data'
 import type { DatasetIndex } from '../types'
 
 export default function DatasetPage() {
   const { datasetId = '' } = useParams()
+  const [searchParams] = useSearchParams()
+  const experimentId = searchParams.get('experiment') ?? 'main'
+  const run = searchParams.get('run')
   const [dataset, setDataset] = useState<DatasetIndex | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     setDataset(null)
     setError(null)
-    loadRootIndex()
+    loadExperimentRootIndex(experimentId, run)
       .then((root) => {
         const summary = root.datasets.find((item) => item.id === datasetId)
         if (!summary) throw new Error(`Dataset을 찾을 수 없습니다: ${datasetId}`)
@@ -21,14 +24,19 @@ export default function DatasetPage() {
       })
       .then(setDataset)
       .catch((reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)))
-  }, [datasetId])
+  }, [datasetId, experimentId, run])
 
   if (error) return <ErrorView message={error} />
   if (!dataset) return <LoadingView />
 
   return (
     <div className="page-content">
-      <Breadcrumbs items={[{ label: 'Datasets', to: '/' }, { label: dataset.label }]} />
+      <Breadcrumbs
+        items={[
+          { label: 'Experiments', to: `/?${searchParams.toString()}` },
+          { label: dataset.label },
+        ]}
+      />
       <section className="page-title-row">
         <div>
           <span className="eyebrow">Dataset folder</span>
@@ -50,7 +58,7 @@ export default function DatasetPage() {
           <Link
             className="category-card"
             key={category.slug}
-            to={`/dataset/${datasetId}/category/${category.slug}`}
+            to={`/dataset/${datasetId}/category/${category.slug}?${searchParams.toString()}`}
           >
             <span className="category-folder">📂</span>
             <div>

@@ -24,6 +24,11 @@ export interface DatasetSummary {
 export interface RootIndex {
   version: number
   generated_at: string | null
+  experiment_id?: string
+  experiment_label?: string
+  run?: string | null
+  available_runs?: string[]
+  available_conditions?: ExperimentCondition[]
   datasets: DatasetSummary[]
   models: string[]
   totals: {
@@ -83,6 +88,7 @@ export interface CategoryIndex {
 
 export interface StageOutput {
   stage: StageName | string
+  display_role?: string
   answer: string | null
   reason: string
   correct: boolean | null
@@ -140,10 +146,48 @@ export interface DownloadManifest {
       categories: Record<string, string>
     }
   >
+  experiments?: Record<string, string | null>
+  prompt_examples?: string | null
 }
 
 export interface SiteConfig {
   title: string
   subtitle: string
   raw_release_url?: string
+}
+
+export type ExperimentCondition =
+  | 'single_agent'
+  | 'multi_agent_no_revision'
+  | 'multi_agent_with_revision'
+
+export interface ExperimentRun {
+  id: string
+  label: string
+  path: string
+}
+
+export interface ExperimentSummary {
+  id: string
+  label: string
+  description: string
+  path: string | null
+  summary_path: string | null
+  available_conditions: ExperimentCondition[]
+  runs: ExperimentRun[]
+  default_run?: string
+  download?: string | null
+}
+
+export interface ExperimentManifest {
+  version: number
+  generated_at: string | null
+  experiments: ExperimentSummary[]
+  prompt_examples_download?: string | null
+}
+
+export interface ExperimentAnalysis {
+  kind: 'neutral_agent_ablation' | 'sufficiency_repeatability'
+  rows: Record<string, string | number | boolean>[]
+  dataset_rows?: Record<string, string | number | boolean>[]
 }

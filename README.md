@@ -158,3 +158,24 @@ src/pages/CategoryPage.tsx          Redirects a category to its first problem
 src/pages/ProblemPage.tsx           Problem selector and detailed result view
 src/components/ConditionViewer.tsx  Displays the three agent-result conditions
 ```
+
+## 9. Add outputs.zip Experiments
+
+The site supports three separately keyed experiment views:
+
+- Main Experiment
+- Neutral Agent Ablation
+- Sufficiency Repeatability (Run 1/2/3)
+
+Keep `outputs.zip` outside the repository and generate only the publishable,
+compact browser data:
+
+```powershell
+.\scripts\rebuild_experiment_data.ps1 `
+  -OutputsZip "C:\Users\samsung-user\Desktop\outputs.zip"
+```
+
+This command deliberately excludes `raw_calls.jsonl`, error logs,
+`call_usage.csv`, and `trash_runs`. It preserves the existing Main Experiment,
+builds the two additional experiment trees atomically, validates every
+generated pair path, and runs the GitHub Pages production build.

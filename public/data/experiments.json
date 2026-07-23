@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generated_at": "2026-07-23T08:17:48.624692+00:00",
+  "experiments": [
+    {
+      "id": "main",
+      "label": "Main Experiment",
+      "description": "Single Agent and Multi-Agent outputs for all 1,560 BBQ, CBBQ, and KoBBQ questions.",
+      "path": "/data/index.json",
+      "summary_path": null,
+      "available_conditions": [
+        "single_agent",
+        "multi_agent_no_revision",
+        "multi_agent_with_revision"
+      ],
+      "runs": [],
+      "download": "/downloads/all_processed_results.zip"
+    },
+    {
+      "id": "neutral_agent_ablation",
+      "label": "Neutral Agent Ablation",
+      "description": "Disambiguated-only ablation replacing the Sufficiency Agent with a Neutral Agent.",
+      "path": "/data/experiments/neutral_agent_ablation/index.json",
+      "summary_path": "/data/experiments/neutral_agent_ablation/summary.json",
+      "available_conditions": [
+        "multi_agent_no_revision",
+        "multi_agent_with_revision"
+      ],
+      "runs": [],
+      "download": "/downloads/neutral_agent_ablation_processed.zip"
+    },
+    {
+      "id": "sufficiency_repeatability",
+      "label": "Sufficiency Repeatability",
+      "description": "Three repeated runs on 390 sampled questions to measure answer stability.",
+      "path": null,
+      "summary_path": "/data/experiments/sufficiency_repeatability/summary.json",
+      "available_conditions": [
+        "multi_agent_no_revision",
+        "multi_agent_with_revision"
+      ],
+      "runs": [
+        {
+          "id": "1",
+          "label": "Run 1",
+          "path": "/data/experiments/sufficiency_repeatability/run1/index.json"
+        },
+        {
+          "id": "2",
+          "label": "Run 2",
+          "path": "/data/experiments/sufficiency_repeatability/run2/index.json"
+        },
+        {
+          "id": "3",
+          "label": "Run 3",
+          "path": "/data/experiments/sufficiency_repeatability/run3/index.json"
+        }
+      ],
+      "default_run": "1",
+      "download": "/downloads/sufficiency_repeatability_processed.zip"
+    }
+  ],
+  "prompt_examples_download": "/downloads/prompt_examples.zip"
+}

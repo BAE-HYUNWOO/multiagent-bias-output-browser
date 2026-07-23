@@ -1,0 +1,242 @@
+{
+  "dataset": "CBBQ",
+  "label": "CBBQ",
+  "category_count": 14,
+  "pair_count": 70,
+  "item_count": 140,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": null,
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/age/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/nationality/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/physical-appearance/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/religion/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/ses/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/sexual-orientation/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "disability",
+      "slug": "disability",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/disability/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "disease",
+      "slug": "disease",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/disease/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "educational_qualification",
+      "slug": "educational-qualification",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/educational-qualification/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "ethnicity",
+      "slug": "ethnicity",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/ethnicity/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "gender",
+      "slug": "gender",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/gender/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "household_registration",
+      "slug": "household-registration",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/household-registration/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "race",
+      "slug": "race",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/race/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "region",
+      "slug": "region",
+      "path": "/data/experiments/sufficiency_repeatability/run2/cbbq/region/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    }
+  ]
+}

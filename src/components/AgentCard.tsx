@@ -24,7 +24,7 @@ export default function AgentCard({
   return (
     <article className={`agent-card${emphasis ? ' final-card' : ''}`}>
       <div className="agent-card-top">
-        <span className="stage-name">{stageLabel(stage.stage)}</span>
+        <span className="stage-name">{stageLabel(stage.display_role ?? stage.stage)}</span>
         <span
           className={`answer-pill ${
             stage.correct === true ? 'correct' : stage.correct === false ? 'incorrect' : ''

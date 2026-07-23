@@ -32,6 +32,7 @@ interface ConditionViewerProps {
   onModelChange: (model: string) => void
   condition: ConditionId
   onConditionChange: (condition: ConditionId) => void
+  availableConditions?: ConditionId[]
 }
 
 export default function ConditionViewer({
@@ -41,6 +42,7 @@ export default function ConditionViewer({
   onModelChange,
   condition,
   onConditionChange,
+  availableConditions = ['single', 'no_revision', 'with_revision'],
 }: ConditionViewerProps) {
 
   const revisionPairs = useMemo(
@@ -73,7 +75,7 @@ export default function ConditionViewer({
       </div>
 
       <div className="condition-tabs" role="tablist">
-        {CONDITIONS.map((item) => (
+        {CONDITIONS.filter((item) => availableConditions.includes(item.id)).map((item) => (
           <button
             key={item.id}
             className={condition === item.id ? 'active' : ''}

@@ -16,10 +16,12 @@ export const stageLabel = (stage: string): string => {
     context_agent_r1: 'Context Agent',
     option_agent_r1: 'Option Agent',
     sufficiency_agent_r1: 'Sufficiency Agent',
+    neutral_agent_r1: 'Neutral Agent',
     judge_no_revision: 'Judge',
     context_agent_r2: 'Context Agent · With Revision',
     option_agent_r2: 'Option Agent · With Revision',
     sufficiency_agent_r2: 'Sufficiency Agent · With Revision',
+    neutral_agent_r2: 'Neutral Agent · With Revision',
     judge_with_revision: 'Judge · With Revision',
   }
   return labels[stage] ?? stage

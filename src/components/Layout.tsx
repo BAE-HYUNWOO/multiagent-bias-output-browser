@@ -5,6 +5,8 @@ import type { DownloadManifest, SiteConfig } from '../types'
 
 export default function Layout({ children }: { children: ReactNode }) {
   const location = useLocation()
+  const query = new URLSearchParams(location.search)
+  const experimentId = query.get('experiment') ?? 'main'
   const isProblemPage = location.pathname.includes('/problem/')
 
   const problemHeaderPath = (() => {
@@ -29,6 +31,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     subtitle: 'BBQ · CBBQ · KoBBQ datasets and model outputs',
   })
   const [manifest, setManifest] = useState<DownloadManifest | null>(null)
+  const experimentDownload = manifest?.experiments?.[experimentId] ?? manifest?.all_processed
 
   useEffect(() => {
     loadSiteConfig().then(setConfig).catch(() => undefined)
@@ -39,7 +42,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div className="app-shell">
       <header className="site-header">
         <div className="header-inner">
-          <Link className="brand" to="/">
+          <Link className="brand" to={`/${location.search}`}>
             <span className="brand-mark">MA</span>
             <span className="brand-copy">
               <strong>{config.title}</strong>
@@ -54,10 +57,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <b aria-hidden="true">›</b>
                 <strong>Problem</strong>
               </nav>
-              <Link className="header-home-button" to="/">Home</Link>
+              <Link className="header-home-button" to={`/${location.search}`}>Home</Link>
             </div>
-          ) : manifest?.all_processed ? (
-            <a className="header-download-button" href={withBase(manifest.all_processed)} download>
+          ) : experimentDownload ? (
+            <a className="header-download-button" href={withBase(experimentDownload)} download>
               Download
             </a>
           ) : null}

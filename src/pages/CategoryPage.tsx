@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { EmptyView, ErrorView, LoadingView } from '../components/StatusView'
-import { loadCategoryIndex, loadDatasetIndex, loadRootIndex } from '../lib/data'
+import { loadCategoryIndex, loadDatasetIndex, loadExperimentRootIndex } from '../lib/data'
 
 export default function CategoryPage() {
   const { datasetId = '', categorySlug = '' } = useParams()
+  const [searchParams] = useSearchParams()
+  const experimentId = searchParams.get('experiment') ?? 'main'
+  const run = searchParams.get('run')
   const navigate = useNavigate()
   const [error, setError] = useState<string | null>(null)
   const [empty, setEmpty] = useState(false)
@@ -14,7 +17,7 @@ export default function CategoryPage() {
     setError(null)
     setEmpty(false)
 
-    loadRootIndex()
+    loadExperimentRootIndex(experimentId, run)
       .then((root) => {
         const datasetSummary = root.datasets.find((item) => item.id === datasetId)
         if (!datasetSummary) throw new Error(`Dataset not found: ${datasetId}`)
@@ -34,7 +37,7 @@ export default function CategoryPage() {
         }
 
         navigate(
-          `/dataset/${datasetId}/category/${categorySlug}/problem/${encodeURIComponent(firstProblem.key)}`,
+          `/dataset/${datasetId}/category/${categorySlug}/problem/${encodeURIComponent(firstProblem.key)}?${searchParams.toString()}`,
           { replace: true },
         )
       })
@@ -47,7 +50,7 @@ export default function CategoryPage() {
     return () => {
       cancelled = true
     }
-  }, [datasetId, categorySlug, navigate])
+  }, [datasetId, categorySlug, experimentId, navigate, run, searchParams])
 
   if (error) return <ErrorView message={error} />
   if (empty) return <EmptyView />

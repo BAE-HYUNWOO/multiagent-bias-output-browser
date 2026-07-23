@@ -3,8 +3,13 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import ConditionViewer, { type ConditionId } from '../components/ConditionViewer'
 import QuestionPanel from '../components/QuestionPanel'
 import { ErrorView, LoadingView } from '../components/StatusView'
-import { loadCategoryIndex, loadDatasetIndex, loadPairData, loadRootIndex } from '../lib/data'
-import type { CategoryIndex, ContextVariant, PairData, PairSummary } from '../types'
+import {
+  loadCategoryIndex,
+  loadDatasetIndex,
+  loadExperimentRootIndex,
+  loadPairData,
+} from '../lib/data'
+import type { CategoryIndex, ContextVariant, PairData, PairSummary, RootIndex } from '../types'
 
 export default function ProblemPage() {
   const { datasetId = '', categorySlug = '', pairKey = '' } = useParams()
@@ -12,9 +17,12 @@ export default function ProblemPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [category, setCategory] = useState<CategoryIndex | null>(null)
   const [pair, setPair] = useState<PairData | null>(null)
+  const [root, setRoot] = useState<RootIndex | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [problemMenuOpen, setProblemMenuOpen] = useState(false)
   const problemPickerRef = useRef<HTMLDivElement>(null)
+  const experimentId = searchParams.get('experiment') ?? 'main'
+  const run = searchParams.get('run')
 
   const decodedPairKey = useMemo(() => {
     try {
@@ -27,10 +35,12 @@ export default function ProblemPage() {
   useEffect(() => {
     setCategory(null)
     setPair(null)
+    setRoot(null)
     setError(null)
 
-    loadRootIndex()
+    loadExperimentRootIndex(experimentId, run)
       .then((root) => {
+        setRoot(root)
         const datasetSummary = root.datasets.find((item) => item.id === datasetId)
         if (!datasetSummary) throw new Error(`Dataset not found: ${datasetId}`)
         return loadDatasetIndex(datasetSummary.path)
@@ -48,7 +58,7 @@ export default function ProblemPage() {
       })
       .then(setPair)
       .catch((reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)))
-  }, [datasetId, categorySlug, decodedPairKey])
+  }, [datasetId, categorySlug, decodedPairKey, experimentId, run])
 
   useEffect(() => {
     if (!problemMenuOpen) return
@@ -71,7 +81,7 @@ export default function ProblemPage() {
   }, [problemMenuOpen])
 
   if (error) return <ErrorView message={error} />
-  if (!category || !pair) return <LoadingView message="Loading problem results..." />
+  if (!category || !pair || !root) return <LoadingView message="Loading problem results..." />
 
   const availableVariants = Object.keys(pair.variants).filter(
     (variant) => Boolean(pair.variants[variant as ContextVariant]),
@@ -91,10 +101,23 @@ export default function ProblemPage() {
   const modelResult = activeVariant.results[model]
 
   const requestedCondition = searchParams.get('condition') as ConditionId | null
+  const availableConditions: ConditionId[] = (
+    root.available_conditions ?? [
+      'single_agent',
+      'multi_agent_no_revision',
+      'multi_agent_with_revision',
+    ]
+  ).map((item) =>
+    item === 'single_agent'
+      ? 'single'
+      : item === 'multi_agent_no_revision'
+        ? 'no_revision'
+        : 'with_revision',
+  )
   const condition: ConditionId =
-    requestedCondition === 'no_revision' || requestedCondition === 'with_revision'
+    requestedCondition && availableConditions.includes(requestedCondition)
       ? requestedCondition
-      : 'single'
+      : availableConditions[0] ?? 'single'
 
   const updateParam = (key: string, value: string) => {
     const next = new URLSearchParams(searchParams)
@@ -136,7 +159,22 @@ export default function ProblemPage() {
   return (
     <div className="page-content problem-detail-page">
       <section className="problem-picker-bar" aria-label="Problem selector">
-        <label id="problem-picker-label">Problem</label>
+        <div className="problem-picker-heading">
+          <label id="problem-picker-label">Problem</label>
+          {root.available_runs?.length ? (
+            <label className="inline-run-control">
+              <span>Run</span>
+              <select
+                value={root.run ?? run ?? root.available_runs[0]}
+                onChange={(event) => updateParam('run', event.target.value)}
+              >
+                {root.available_runs.map((item) => (
+                  <option key={item} value={item}>Run {item}</option>
+                ))}
+              </select>
+            </label>
+          ) : null}
+        </div>
         <div
           className={`problem-picker-dropdown${problemMenuOpen ? ' open' : ''}`}
           ref={problemPickerRef}
@@ -197,6 +235,7 @@ export default function ProblemPage() {
             onModelChange={(value) => updateParam('model', value)}
             condition={condition}
             onConditionChange={(value) => updateParam('condition', value)}
+            availableConditions={availableConditions}
           />
         </section>
       )}

@@ -1,0 +1,242 @@
+{
+  "dataset": "KoBBQ",
+  "label": "KoBBQ",
+  "category_count": 14,
+  "pair_count": 70,
+  "item_count": 140,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": null,
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/age/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Disability_status",
+      "slug": "disability-status",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/disability-status/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Domestic_area_of_origin",
+      "slug": "domestic-area-of-origin",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/domestic-area-of-origin/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Educational_background",
+      "slug": "educational-background",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/educational-background/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Family_structure",
+      "slug": "family-structure",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/family-structure/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Gender_identity",
+      "slug": "gender-identity",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/gender-identity/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/nationality/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/physical-appearance/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Political_orientation",
+      "slug": "political-orientation",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/political-orientation/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Race_ethnicity",
+      "slug": "race-ethnicity",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/race-ethnicity/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Race_ethnicity_nationality",
+      "slug": "race-ethnicity-nationality",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/race-ethnicity-nationality/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/religion/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/ses/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/sexual-orientation/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    }
+  ]
+}

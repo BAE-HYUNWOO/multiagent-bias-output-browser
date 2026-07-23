@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "generated_at": "2026-07-23T08:17:47.258994+00:00",
+  "experiment_id": "sufficiency_repeatability",
+  "experiment_label": "Sufficiency Repeatability",
+  "run": "3",
+  "available_runs": [
+    "1",
+    "2",
+    "3"
+  ],
+  "available_conditions": [
+    "multi_agent_no_revision",
+    "multi_agent_with_revision"
+  ],
+  "datasets": [
+    {
+      "id": "bbq",
+      "label": "BBQ",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/index.json",
+      "category_count": 11,
+      "pair_count": 55,
+      "item_count": 110,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ]
+    },
+    {
+      "id": "cbbq",
+      "label": "CBBQ",
+      "path": "/data/experiments/sufficiency_repeatability/run3/cbbq/index.json",
+      "category_count": 14,
+      "pair_count": 70,
+      "item_count": 140,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ]
+    },
+    {
+      "id": "kobbq",
+      "label": "KoBBQ",
+      "path": "/data/experiments/sufficiency_repeatability/run3/kobbq/index.json",
+      "category_count": 14,
+      "pair_count": 70,
+      "item_count": 140,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ]
+    }
+  ],
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "totals": {
+    "categories": 39,
+    "pairs": 195,
+    "items": 390,
+    "stage_records": 18720
+  }
+}

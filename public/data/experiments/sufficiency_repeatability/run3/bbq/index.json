@@ -1,0 +1,194 @@
+{
+  "dataset": "BBQ",
+  "label": "BBQ",
+  "category_count": 11,
+  "pair_count": 55,
+  "item_count": 110,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "qwen3_8b"
+  ],
+  "download": null,
+  "categories": [
+    {
+      "name": "Age",
+      "slug": "age",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/age/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Disability_status",
+      "slug": "disability-status",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/disability-status/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Gender_identity",
+      "slug": "gender-identity",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/gender-identity/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Nationality",
+      "slug": "nationality",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/nationality/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Physical_appearance",
+      "slug": "physical-appearance",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/physical-appearance/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Race_ethnicity",
+      "slug": "race-ethnicity",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/race-ethnicity/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Race_x_SES",
+      "slug": "race-x-ses",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/race-x-ses/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Race_x_gender",
+      "slug": "race-x-gender",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/race-x-gender/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Religion",
+      "slug": "religion",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/religion/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "SES",
+      "slug": "ses",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/ses/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    },
+    {
+      "name": "Sexual_orientation",
+      "slug": "sexual-orientation",
+      "path": "/data/experiments/sufficiency_repeatability/run3/bbq/sexual-orientation/index.json",
+      "pair_count": 5,
+      "item_count": 10,
+      "models": [
+        "gemma_3_27b",
+        "llama_3_3_70b",
+        "mistral_small_3_2_24b",
+        "qwen3_14b",
+        "qwen3_32b",
+        "qwen3_8b"
+      ],
+      "download": null
+    }
+  ]
+}

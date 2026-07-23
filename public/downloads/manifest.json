@@ -57,5 +57,11 @@
         "Sexual_orientation": "/downloads/kobbq/sexual-orientation.zip"
       }
     }
-  }
+  },
+  "experiments": {
+    "main": "/downloads/all_processed_results.zip",
+    "neutral_agent_ablation": "/downloads/neutral_agent_ablation_processed.zip",
+    "sufficiency_repeatability": "/downloads/sufficiency_repeatability_processed.zip"
+  },
+  "prompt_examples": "/downloads/prompt_examples.zip"
 }
