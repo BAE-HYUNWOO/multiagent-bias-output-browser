@@ -85,7 +85,6 @@ export default function PromptExamplesPage() {
     <div className="page-content prompt-examples-page">
       <section className="prompt-page-heading">
         <div>
-          <span className="eyebrow">Recorded API inputs</span>
           <h1>Prompt Examples</h1>
           <p>
             Actual system prompts, user prompts, and parsed outputs recorded for{' '}
@@ -156,3 +155,4 @@ export default function PromptExamplesPage() {
     </div>
   )
 }
+

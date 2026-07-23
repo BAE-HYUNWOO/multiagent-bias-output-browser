@@ -16,6 +16,12 @@ import type {
   RootIndex,
 } from '../types'
 
+const PAPER_REFERENCES: Record<string, string> = {
+  main: 'Tables 1–9; Appendix A1–A3; Appendix B1–B5; Appendix C1–C3; Appendix E.1',
+  neutral_agent_ablation: 'Table 10; Appendix D.10–D.11; Appendix E.2',
+  sufficiency_repeatability: 'Appendix E.3',
+}
+
 export default function HomePage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [manifest, setManifest] = useState<ExperimentManifest | null>(null)
@@ -111,8 +117,21 @@ export default function HomePage() {
     <div className="page-content home-page">
       <section className="experiment-toolbar">
         <div>
-          <span className="eyebrow">Selected experiment</span>
           <h1>{experiment.label}</h1>
+          {PAPER_REFERENCES[experiment.id] ? (
+            <small
+              style={{
+                display: 'block',
+                margin: '0 0 8px',
+                color: '#7a8798',
+                fontSize: '11px',
+                fontWeight: 700,
+                lineHeight: 1.45,
+              }}
+            >
+              Paper reference: {PAPER_REFERENCES[experiment.id]}
+            </small>
+          ) : null}
           <p>
             {index.totals.items.toLocaleString()} questions ·{' '}
             {index.models.length} models ·{' '}
@@ -200,3 +219,4 @@ export default function HomePage() {
     </div>
   )
 }
+
