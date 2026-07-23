@@ -89,6 +89,28 @@ def main() -> None:
                     f"{experiment_id}: missing summary: {public_path(summary_path)}"
                 )
 
+        prompt_examples_path = experiment_manifest.get("prompt_examples_path")
+        if not prompt_examples_path:
+            errors.append("Experiment manifest is missing prompt_examples_path")
+        elif not public_path(prompt_examples_path).exists():
+            errors.append(
+                f"Missing prompt examples data: {public_path(prompt_examples_path)}"
+            )
+        else:
+            prompt_examples = load(public_path(prompt_examples_path))
+            languages = prompt_examples.get("languages", [])
+            if len(languages) != 3:
+                errors.append(
+                    f"Prompt examples: expected 3 languages, found {len(languages)}"
+                )
+            for language in languages:
+                cards = language.get("cards", [])
+                if len(cards) != 11:
+                    errors.append(
+                        "Prompt examples: expected 11 cards for "
+                        f"{language.get('language_code')}, found {len(cards)}"
+                    )
+
     if errors:
         print("[FAIL]")
         for error in errors[:100]:

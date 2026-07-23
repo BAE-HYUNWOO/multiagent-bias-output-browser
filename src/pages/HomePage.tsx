@@ -68,14 +68,6 @@ export default function HomePage() {
       .catch((reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)))
   }, [experimentId, manifest, run, setSearchParams])
 
-  const setExperiment = (id: string) => {
-    const next = new URLSearchParams()
-    next.set('experiment', id)
-    const selected = manifest?.experiments.find((item) => item.id === id)
-    if (selected?.default_run) next.set('run', selected.default_run)
-    setSearchParams(next)
-  }
-
   const setRun = (value: string) => {
     const next = new URLSearchParams(searchParams)
     next.set('run', value)
@@ -117,20 +109,6 @@ export default function HomePage() {
 
   return (
     <div className="page-content home-page">
-      <section className="experiment-switcher" aria-label="Experiments">
-        {manifest.experiments.map((item) => (
-          <button
-            type="button"
-            key={item.id}
-            className={`experiment-card${item.id === experimentId ? ' active' : ''}`}
-            onClick={() => setExperiment(item.id)}
-          >
-            <strong>{item.label}</strong>
-            <span>{item.description}</span>
-          </button>
-        ))}
-      </section>
-
       <section className="experiment-toolbar">
         <div>
           <span className="eyebrow">Selected experiment</span>
@@ -157,19 +135,8 @@ export default function HomePage() {
               Download
             </a>
           ) : null}
-          {manifest.prompt_examples_download ? (
-            <a
-              className="secondary-button"
-              href={withBase(manifest.prompt_examples_download)}
-              download
-            >
-              Prompt Examples
-            </a>
-          ) : null}
         </div>
       </section>
-
-      <ExperimentSummaryPanel analysis={analysis} />
 
       <section className="dataset-folder-list" aria-label="Datasets">
         {index.datasets.map((dataset) => {
@@ -224,6 +191,12 @@ export default function HomePage() {
           )
         })}
       </section>
+
+      {analysis ? (
+        <div className="analysis-below-datasets">
+          <ExperimentSummaryPanel analysis={analysis} />
+        </div>
+      ) : null}
     </div>
   )
 }

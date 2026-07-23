@@ -184,10 +184,45 @@ export interface ExperimentManifest {
   generated_at: string | null
   experiments: ExperimentSummary[]
   prompt_examples_download?: string | null
+  prompt_examples_path?: string | null
 }
 
 export interface ExperimentAnalysis {
   kind: 'neutral_agent_ablation' | 'sufficiency_repeatability'
   rows: Record<string, string | number | boolean>[]
   dataset_rows?: Record<string, string | number | boolean>[]
+}
+
+export interface PromptExampleCard {
+  group: 'single' | 'multi_agent' | 'neutral_agent'
+  label: string
+  stage: string
+  agent: string
+  experiment: string
+  system_prompt: string
+  user_prompt: string
+  actual_output: Record<string, unknown> | null
+  order: number
+}
+
+export interface PromptExampleLanguage {
+  language: string
+  language_code: string
+  dataset: string
+  model: string
+  model_id: string
+  item: {
+    item_id: string
+    category: string
+    context_type: string
+    [key: string]: unknown
+  }
+  cards: PromptExampleCard[]
+}
+
+export interface PromptExamplesData {
+  version: number
+  generated_at: string | null
+  model: string
+  languages: PromptExampleLanguage[]
 }

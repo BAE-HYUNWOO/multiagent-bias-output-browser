@@ -1,69 +1,60 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { loadDownloadManifest, loadSiteConfig, withBase } from '../lib/data'
-import type { DownloadManifest, SiteConfig } from '../types'
+import { loadSiteConfig } from '../lib/data'
+import type { SiteConfig } from '../types'
+
+const EXPERIMENT_LINKS = [
+  { id: 'main', label: 'Main Experiment', to: '/?experiment=main' },
+  {
+    id: 'neutral_agent_ablation',
+    label: 'Neutral Agent Ablation',
+    to: '/?experiment=neutral_agent_ablation',
+  },
+  {
+    id: 'sufficiency_repeatability',
+    label: 'Sufficiency Repeatability',
+    to: '/?experiment=sufficiency_repeatability&run=1',
+  },
+  { id: 'prompt_examples', label: 'Prompt Examples', to: '/prompts' },
+] as const
 
 export default function Layout({ children }: { children: ReactNode }) {
   const location = useLocation()
   const query = new URLSearchParams(location.search)
-  const experimentId = query.get('experiment') ?? 'main'
-  const isProblemPage = location.pathname.includes('/problem/')
-
-  const problemHeaderPath = (() => {
-    if (!isProblemPage) return null
-    const parts = location.pathname.split('/').filter(Boolean)
-    const datasetIndex = parts.indexOf('dataset')
-    const categoryIndex = parts.indexOf('category')
-    if (datasetIndex < 0 || categoryIndex < 0) return null
-
-    const dataset = (parts[datasetIndex + 1] ?? '').toUpperCase()
-    const categorySlug = parts[categoryIndex + 1] ?? ''
-    const category = categorySlug
-      .split('-')
-      .filter(Boolean)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ')
-
-    return { dataset, category }
-  })()
+  const experimentId =
+    location.pathname === '/prompts'
+      ? 'prompt_examples'
+      : query.get('experiment') ?? 'main'
   const [config, setConfig] = useState<SiteConfig>({
     title: 'Multi-Agent Bias Output Browser',
     subtitle: 'BBQ · CBBQ · KoBBQ datasets and model outputs',
   })
-  const [manifest, setManifest] = useState<DownloadManifest | null>(null)
-  const experimentDownload = manifest?.experiments?.[experimentId] ?? manifest?.all_processed
 
   useEffect(() => {
     loadSiteConfig().then(setConfig).catch(() => undefined)
-    loadDownloadManifest().then(setManifest).catch(() => undefined)
   }, [])
 
   return (
     <div className="app-shell">
       <header className="site-header">
         <div className="header-inner">
-          <Link className="brand" to={`/${location.search}`}>
+          <Link className="brand" to="/?experiment=main">
             <span className="brand-mark">MA</span>
             <span className="brand-copy">
               <strong>{config.title}</strong>
             </span>
           </Link>
-          {problemHeaderPath ? (
-            <div className="header-actions">
-              <nav className="header-context-path" aria-label="Current location">
-                <span>{problemHeaderPath.dataset}</span>
-                <b aria-hidden="true">›</b>
-                <span>{problemHeaderPath.category}</span>
-                <b aria-hidden="true">›</b>
-                <strong>Problem</strong>
-              </nav>
-              <Link className="header-home-button" to={`/${location.search}`}>Home</Link>
-            </div>
-          ) : experimentDownload ? (
-            <a className="header-download-button" href={withBase(experimentDownload)} download>
-              Download
-            </a>
-          ) : null}
+          <nav className="experiment-header-nav" aria-label="Experiment views">
+            {EXPERIMENT_LINKS.map((item) => (
+              <Link
+                key={item.id}
+                className={experimentId === item.id ? 'active' : ''}
+                to={item.to}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </header>
       <main className="page-shell">{children}</main>

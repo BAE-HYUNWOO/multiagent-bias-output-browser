@@ -13,6 +13,23 @@ const signedPoints = (value: unknown) => {
   return `${points > 0 ? '+' : ''}${points.toFixed(1)} pp`
 }
 
+const firstOfRepeatedBlock = (
+  rows: Record<string, string | number | boolean>[],
+  index: number,
+  key: string,
+  parentKeys: string[] = [],
+) => {
+  if (index === 0) return String(rows[index][key])
+  const row = rows[index]
+  const previous = rows[index - 1]
+  const parentChanged = parentKeys.some(
+    (parentKey) => String(row[parentKey]) !== String(previous[parentKey]),
+  )
+  return parentChanged || String(row[key]) !== String(previous[key])
+    ? String(row[key])
+    : ''
+}
+
 export default function ExperimentSummaryPanel({
   analysis,
 }: {
@@ -43,21 +60,33 @@ export default function ExperimentSummaryPanel({
               </tr>
             </thead>
             <tbody>
-              {analysis.rows.map((row, index) => (
-                <tr key={`${row.model}-${row.dataset}-${row.condition}-${index}`}>
-                  <td>{modelLabel(String(row.model))}</td>
-                  <td>{String(row.dataset)}</td>
-                  <td>
-                    {String(row.condition) === 'multi_agent_with_revision'
-                      ? 'With Revision'
-                      : 'Without Revision'}
-                  </td>
-                  <td>{Number(row.paired_n).toLocaleString()}</td>
-                  <td>{percent(row.original_accuracy)}</td>
-                  <td>{percent(row.neutral_accuracy)}</td>
-                  <td>{signedPoints(row.accuracy_change)}</td>
-                </tr>
-              ))}
+              {analysis.rows.map((row, index) => {
+                const model = firstOfRepeatedBlock(analysis.rows, index, 'model')
+                const dataset = firstOfRepeatedBlock(
+                  analysis.rows,
+                  index,
+                  'dataset',
+                  ['model'],
+                )
+                return (
+                  <tr
+                    className={model ? 'summary-group-start' : ''}
+                    key={`${row.model}-${row.dataset}-${row.condition}-${index}`}
+                  >
+                    <td>{model ? modelLabel(model) : ''}</td>
+                    <td>{dataset}</td>
+                    <td>
+                      {String(row.condition) === 'multi_agent_with_revision'
+                        ? 'With Revision'
+                        : 'Without Revision'}
+                    </td>
+                    <td>{Number(row.paired_n).toLocaleString()}</td>
+                    <td>{percent(row.original_accuracy)}</td>
+                    <td>{percent(row.neutral_accuracy)}</td>
+                    <td>{signedPoints(row.accuracy_change)}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -87,21 +116,27 @@ export default function ExperimentSummaryPanel({
             </tr>
           </thead>
           <tbody>
-            {analysis.rows.map((row, index) => (
-              <tr key={`${row.model}-${row.condition}-${index}`}>
-                <td>{modelLabel(String(row.model))}</td>
-                <td>
-                  {String(row.condition) === 'multi_agent_with_revision'
-                    ? 'With Revision'
-                    : 'Without Revision'}
-                </td>
-                <td>{Number(row.n_item_models).toLocaleString()}</td>
-                <td>{percent(row.all_runs_same_rate)}</td>
-                <td>{percent(row.changed_across_runs_rate)}</td>
-                <td>{percent(row.mean_pairwise_agreement)}</td>
-                <td>{percent(row.mean_accuracy_rate)}</td>
-              </tr>
-            ))}
+            {analysis.rows.map((row, index) => {
+              const model = firstOfRepeatedBlock(analysis.rows, index, 'model')
+              return (
+                <tr
+                  className={model ? 'summary-group-start' : ''}
+                  key={`${row.model}-${row.condition}-${index}`}
+                >
+                  <td>{model ? modelLabel(model) : ''}</td>
+                  <td>
+                    {String(row.condition) === 'multi_agent_with_revision'
+                      ? 'With Revision'
+                      : 'Without Revision'}
+                  </td>
+                  <td>{Number(row.n_item_models).toLocaleString()}</td>
+                  <td>{percent(row.all_runs_same_rate)}</td>
+                  <td>{percent(row.changed_across_runs_rate)}</td>
+                  <td>{percent(row.mean_pairwise_agreement)}</td>
+                  <td>{percent(row.mean_accuracy_rate)}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

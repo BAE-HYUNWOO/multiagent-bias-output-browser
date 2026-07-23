@@ -6,6 +6,7 @@ import type {
   ExperimentManifest,
   ExperimentSummary,
   PairData,
+  PromptExamplesData,
   RootIndex,
   SiteConfig,
 } from '../types'
@@ -64,4 +65,6 @@ export const loadSiteConfig = () => fetchJson<SiteConfig>('/data/site_config.jso
 export const loadDatasetIndex = (path: string) => fetchJson<DatasetIndex>(path)
 export const loadCategoryIndex = (path: string) => fetchJson<CategoryIndex>(path)
 export const loadPairData = (path: string) => fetchJson<PairData>(path)
+export const loadPromptExamples = () =>
+  fetchJson<PromptExamplesData>('/data/prompt_examples.json')
 export const loadDownloadManifest = () => fetchJson<DownloadManifest>('/downloads/manifest.json')

@@ -69,6 +69,16 @@ REPEAT_ITEM_STABILITY_MEMBER = (
     "scope_all_amb_dis5_seed20260721/item_model_judge_stability.csv"
 )
 PROMPT_PREFIX = "outputs/actual_prompts_single_neutral_all_languages/"
+MULTI_PROMPT_PREFIX = (
+    "outputs/sufficiency_repeatability/scope_all_amb_dis5_seed20260721/"
+    "actual_prompts_all_languages/"
+)
+SINGLE_NEUTRAL_PROMPTS_MEMBER = (
+    PROMPT_PREFIX + "actual_single_neutral_all_languages_qwen3_8b.json"
+)
+MULTI_PROMPTS_MEMBER = (
+    MULTI_PROMPT_PREFIX + "actual_prompts_all_languages_run01_qwen3_8b.json"
+)
 
 
 def write_json(path: Path, value: Any, *, compact: bool = False) -> None:
@@ -183,6 +193,10 @@ class ZipSource:
     def csv_rows(self, member: str) -> list[dict[str, str]]:
         with self.text(member) as handle:
             return list(csv.DictReader(handle))
+
+    def json_value(self, member: str) -> Any:
+        with self.text(member) as handle:
+            return json.load(handle)
 
     def copy_member(self, member: str, destination: Path) -> None:
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -591,6 +605,132 @@ def csv_as_json(source: ZipSource, member: str) -> list[dict[str, Any]]:
     ]
 
 
+def build_prompt_examples(source: ZipSource) -> dict[str, Any]:
+    single_neutral = source.json_value(SINGLE_NEUTRAL_PROMPTS_MEMBER)
+    multi_agent = source.json_value(MULTI_PROMPTS_MEMBER)
+    multi_by_language = {
+        language["language_code"]: language
+        for language in multi_agent.get("languages", [])
+    }
+    languages: list[dict[str, Any]] = []
+
+    for language in single_neutral.get("languages", []):
+        language_code = language["language_code"]
+        multi_language = multi_by_language.get(language_code)
+        if not multi_language:
+            raise ValueError(
+                f"Missing multi-agent prompt example for language: {language_code}"
+            )
+
+        cards: list[dict[str, Any]] = []
+
+        def add_card(
+            *,
+            group: str,
+            label: str,
+            stage: str,
+            agent: str,
+            experiment: str,
+            system_prompt: str,
+            user_prompt: str,
+            output: Any,
+            order: int,
+        ) -> None:
+            cards.append(
+                {
+                    "group": group,
+                    "label": label,
+                    "stage": stage,
+                    "agent": agent,
+                    "experiment": experiment,
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                    "actual_output": output,
+                    "order": order,
+                }
+            )
+
+        single_sections = language.get("sections", [])
+        single = next(
+            (
+                section
+                for section in single_sections
+                if section.get("agent") == "single_agent"
+            ),
+            None,
+        )
+        if single:
+            add_card(
+                group="single",
+                label="Single Agent",
+                stage=single.get("stage", "single_agent"),
+                agent=single.get("agent", "single_agent"),
+                experiment=single.get("experiment", "original"),
+                system_prompt=single.get("system_prompt", ""),
+                user_prompt=single.get("actually_sent_user_prompt")
+                or single.get("reconstructed_user_prompt", ""),
+                output=single.get("actual_successful_parsed_output"),
+                order=1,
+            )
+
+        for stage in multi_language.get("stages", []):
+            add_card(
+                group="multi_agent",
+                label=stage.get("label", stage.get("stage", "")),
+                stage=stage.get("stage", ""),
+                agent=stage.get("stage", ""),
+                experiment="sufficiency_repeatability_run_1",
+                system_prompt=stage.get(
+                    "system_prompt", multi_language.get("system_prompt", "")
+                ),
+                user_prompt=stage.get("user_prompt", ""),
+                output=stage.get("actual_successful_parsed_output"),
+                order=100 + int(stage.get("order", 0)),
+            )
+
+        neutral_sections = [
+            section
+            for section in single_sections
+            if section.get("agent") in {"neutral_agent", "neutral_agent_revision"}
+        ]
+        for index, section in enumerate(neutral_sections, 1):
+            add_card(
+                group="neutral_agent",
+                label=(
+                    "Neutral Agent — Round 1"
+                    if section.get("agent") == "neutral_agent"
+                    else "Neutral Agent — With Revision"
+                ),
+                stage=section.get("stage", ""),
+                agent=section.get("agent", ""),
+                experiment=section.get("experiment", "neutral_agent_ablation"),
+                system_prompt=section.get("system_prompt", ""),
+                user_prompt=section.get("actually_sent_user_prompt")
+                or section.get("reconstructed_user_prompt", ""),
+                output=section.get("actual_successful_parsed_output"),
+                order=200 + index,
+            )
+
+        languages.append(
+            {
+                "language": language["language"],
+                "language_code": language_code,
+                "dataset": language["dataset"],
+                "model": language["model"],
+                "model_id": language["model_id"],
+                "item": language["item"],
+                "cards": sorted(cards, key=lambda card: card["order"]),
+            }
+        )
+
+    return {
+        "version": 1,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "model": single_neutral.get("model", "qwen3_8b"),
+        "languages": languages,
+    }
+
+
 def zip_directory(source: Path, destination: Path, prefix: str) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(
@@ -677,6 +817,7 @@ def build(root: Path, outputs_zip: Path) -> None:
             temp = Path(temp_name)
             temp_data = temp / "data" / "experiments"
             temp_downloads = temp / "downloads"
+            prompt_examples_file = temp / "prompt_examples.json"
 
             neutral_dir = temp_data / "neutral_agent_ablation"
             neutral_root = build_tree(
@@ -766,11 +907,22 @@ def build(root: Path, outputs_zip: Path) -> None:
                 / "item_model_judge_stability.csv",
             )
 
+            prompt_examples = build_prompt_examples(source)
+            write_json(prompt_examples_file, prompt_examples)
+
             prompt_dir = temp_downloads / "prompt_examples"
             for clean_member, original in source.members.items():
                 if clean_member.startswith(PROMPT_PREFIX):
                     relative = Path(clean_member).relative_to(PROMPT_PREFIX)
-                    destination = prompt_dir / relative
+                    destination = prompt_dir / "single_neutral" / relative
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    with source.archive.open(original) as input_handle, destination.open(
+                        "wb"
+                    ) as output_handle:
+                        shutil.copyfileobj(input_handle, output_handle)
+                elif clean_member.startswith(MULTI_PROMPT_PREFIX):
+                    relative = Path(clean_member).relative_to(MULTI_PROMPT_PREFIX)
+                    destination = prompt_dir / "multi_agent" / relative
                     destination.parent.mkdir(parents=True, exist_ok=True)
                     with source.archive.open(original) as input_handle, destination.open(
                         "wb"
@@ -898,10 +1050,12 @@ def build(root: Path, outputs_zip: Path) -> None:
                     },
                 ],
                 "prompt_examples_download": "/downloads/prompt_examples.zip",
+                "prompt_examples_path": "/data/prompt_examples.json",
             }
 
             final_experiments_dir = public_data / "experiments"
             safe_replace_directory(temp_data, final_experiments_dir)
+            prompt_examples_file.replace(public_data / "prompt_examples.json")
             public_downloads.mkdir(parents=True, exist_ok=True)
             for path in list(temp_downloads.iterdir()):
                 destination = public_downloads / path.name
