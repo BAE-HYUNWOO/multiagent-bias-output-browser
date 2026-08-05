@@ -58,7 +58,7 @@ def main() -> None:
     else:
         experiment_manifest = load(experiment_manifest_path)
         expected_items = {
-            "main": 1560,
+            "main": root.get("totals", {}).get("items"),
             "neutral_agent_ablation": 780,
             "sufficiency_repeatability": 390,
         }

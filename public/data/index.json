@@ -1,16 +1,18 @@
 {
   "version": 1,
-  "generated_at": "2026-07-13T03:11:52.043881+00:00",
+  "generated_at": "2026-08-05T03:37:23.961174+00:00",
   "datasets": [
     {
       "id": "bbq",
       "label": "BBQ",
       "path": "/data/bbq/index.json",
       "category_count": 11,
-      "pair_count": 220,
-      "item_count": 440,
+      "pair_count": 1540,
+      "item_count": 3080,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -23,10 +25,12 @@
       "label": "CBBQ",
       "path": "/data/cbbq/index.json",
       "category_count": 14,
-      "pair_count": 280,
-      "item_count": 560,
+      "pair_count": 1960,
+      "item_count": 3920,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -39,10 +43,12 @@
       "label": "KoBBQ",
       "path": "/data/kobbq/index.json",
       "category_count": 14,
-      "pair_count": 280,
-      "item_count": 560,
+      "pair_count": 1960,
+      "item_count": 3920,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -52,7 +58,9 @@
     }
   ],
   "models": [
+    "gemini_3_5_flash_lite",
     "gemma_3_27b",
+    "gpt_5_mini",
     "llama_3_3_70b",
     "mistral_small_3_2_24b",
     "qwen3_14b",
@@ -61,8 +69,8 @@
   ],
   "totals": {
     "categories": 39,
-    "pairs": 780,
-    "items": 1560,
-    "stage_records": 84240
+    "pairs": 5460,
+    "items": 10920,
+    "stage_records": 772127
   }
 }

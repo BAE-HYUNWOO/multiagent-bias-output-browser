@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated_at": "2026-07-23T10:48:44.989392+00:00",
+  "generated_at": "2026-08-05T03:58:04.724252+00:00",
   "experiments": [
     {
       "id": "main",
       "label": "Main Experiment",
-      "description": "Single Agent and Multi-Agent outputs for all 1,560 BBQ, CBBQ, and KoBBQ questions.",
+      "description": "Single Agent and Multi-Agent outputs for 10,920 BBQ, CBBQ, and KoBBQ questions across 8 models.",
       "path": "/data/index.json",
       "summary_path": null,
       "available_conditions": [
