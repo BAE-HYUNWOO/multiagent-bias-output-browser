@@ -1,0 +1,51 @@
+{
+  "completed_at": "2026-08-04T23:56:00.157624+00:00",
+  "same_exact_390_problems_all_runs": true,
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_8b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "gpt_5_mini",
+    "gemini_3_5_flash_lite"
+  ],
+  "run1": {
+    "source": "runs_8models Main records, current processed Run 1 fallback for missing six-model stages, and resumed missing frontier Main stages",
+    "main_frontier_stages_reused": 3136,
+    "frontier_stages_resumed": 3104
+  },
+  "run2": {
+    "six_original_models": "preserved",
+    "frontier_models": "new complete run"
+  },
+  "run3": {
+    "six_original_models": "preserved",
+    "frontier_models": "new complete run"
+  },
+  "validation": {
+    "run1": {
+      "items": 390,
+      "model_items": 3120,
+      "stage_records": 24960
+    },
+    "run2": {
+      "items": 390,
+      "model_items": 3120,
+      "stage_records": 24960
+    },
+    "run3": {
+      "items": 390,
+      "model_items": 3120,
+      "stage_records": 24960
+    }
+  },
+  "analysis": {
+    "judge_rows": 18720,
+    "item_model_condition_rows": 6240,
+    "summary_rows": 16,
+    "dataset_context_rows": 96
+  },
+  "work_directory": "C:\\Users\\samsung-user\\Desktop\\multiagent-bias-experiment-main\\outputs\\sufficiency_repeatability_8models_work"
+}

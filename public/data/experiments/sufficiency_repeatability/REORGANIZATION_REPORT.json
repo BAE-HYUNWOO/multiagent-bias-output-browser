@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-04T10:00:26.346420+00:00",
+  "project": "C:\\Users\\samsung-user\\Desktop\\multiagent-bias-experiment-main",
+  "target": "C:\\Users\\samsung-user\\Desktop\\multiagent-bias-experiment-main\\outputs\\sufficiency_repeatability",
+  "design": {
+    "run1": "Main Experiment results for the same 390 sampled items",
+    "run2": "Former processed repeatability Run 1",
+    "run3": "Former processed repeatability Run 2",
+    "former_run3": "discarded",
+    "legacy_scope_folder": "left untouched"
+  },
+  "run1_source_report": {
+    "selected_items": 390,
+    "models": [
+      "gemma_3_27b",
+      "llama_3_3_70b",
+      "mistral_small_3_2_24b",
+      "qwen3_14b",
+      "qwen3_32b",
+      "qwen3_8b"
+    ],
+    "expected_stage_records": 18720,
+    "actual_stage_records": 18720,
+    "local_main_stage_records_used": 18712,
+    "github_fallback_stage_records_used": 8,
+    "missing_before_github_fallback": 8,
+    "missing_after_github_fallback": 0,
+    "missing_examples": []
+  },
+  "validation": {
+    "run1": {
+      "pairs": 195,
+      "items": 390,
+      "stage_records": 18720
+    },
+    "run2": {
+      "pairs": 195,
+      "items": 390,
+      "stage_records": 18720
+    },
+    "run3": {
+      "pairs": 195,
+      "items": 390,
+      "stage_records": 18720
+    }
+  },
+  "analysis": {
+    "judge_rows": 14040,
+    "item_model_condition_rows": 4680,
+    "overall_rows": 12,
+    "dataset_context_rows": 72
+  }
+}

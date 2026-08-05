@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-07-23T10:48:42.323535+00:00",
+  "generated_at": "2026-08-05T04:17:41.162396+00:00",
   "experiment_id": "sufficiency_repeatability",
   "experiment_label": "Sufficiency Repeatability",
   "run": "2",
@@ -22,7 +22,9 @@
       "pair_count": 55,
       "item_count": 110,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -38,7 +40,9 @@
       "pair_count": 70,
       "item_count": 140,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -54,7 +58,9 @@
       "pair_count": 70,
       "item_count": 140,
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -64,7 +70,9 @@
     }
   ],
   "models": [
+    "gemini_3_5_flash_lite",
     "gemma_3_27b",
+    "gpt_5_mini",
     "llama_3_3_70b",
     "mistral_small_3_2_24b",
     "qwen3_14b",
@@ -75,6 +83,6 @@
     "categories": 39,
     "pairs": 195,
     "items": 390,
-    "stage_records": 18720
+    "stage_records": 24960
   }
 }
