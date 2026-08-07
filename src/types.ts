@@ -205,10 +205,7 @@ export interface PromptExampleCard {
   order: number
 }
 
-export interface PromptExampleLanguage {
-  language: string
-  language_code: string
-  dataset: string
+export interface PromptExampleEntry {
   model: string
   model_id: string
   item: {
@@ -218,6 +215,17 @@ export interface PromptExampleLanguage {
     [key: string]: unknown
   }
   cards: PromptExampleCard[]
+}
+
+export interface PromptExampleLanguage {
+  language: string
+  language_code: string
+  dataset: string
+  model: string
+  model_id: string
+  item: PromptExampleEntry['item']
+  cards: PromptExampleCard[]
+  examples?: PromptExampleEntry[]
 }
 
 export interface PromptExamplesData {

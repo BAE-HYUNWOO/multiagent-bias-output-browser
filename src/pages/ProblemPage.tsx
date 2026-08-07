@@ -229,6 +229,7 @@ export default function ProblemPage() {
             onVariantChange={(value) => updateParam('variant', value)}
           />
           <ConditionViewer
+            experimentId={experimentId}
             result={modelResult}
             models={pair.models}
             model={model}

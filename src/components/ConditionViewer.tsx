@@ -15,12 +15,19 @@ function stageByName(stages: StageOutput[], name: string): StageOutput | null {
   return stages.find((stage) => stage.stage === name) ?? null
 }
 
-function RoundGrid({ stages }: { stages: StageOutput[] }) {
+function stageForDisplay(stage: StageOutput | null, experimentId?: string): StageOutput | null {
+  if (!stage || experimentId !== 'neutral_agent_ablation') return stage
+  if (stage.stage === 'sufficiency_agent_r1') return { ...stage, display_role: 'neutral_agent_r1' }
+  if (stage.stage === 'sufficiency_agent_r2') return { ...stage, display_role: 'neutral_agent_r2' }
+  return stage
+}
+
+function RoundGrid({ stages, experimentId }: { stages: StageOutput[]; experimentId?: string }) {
   return (
     <div className="agent-grid three-columns">
-      <AgentCard stage={stageByName(stages, 'context_agent_r1')} />
-      <AgentCard stage={stageByName(stages, 'option_agent_r1')} />
-      <AgentCard stage={stageByName(stages, 'sufficiency_agent_r1')} />
+      <AgentCard stage={stageForDisplay(stageByName(stages, 'context_agent_r1'), experimentId)} />
+      <AgentCard stage={stageForDisplay(stageByName(stages, 'option_agent_r1'), experimentId)} />
+      <AgentCard stage={stageForDisplay(stageByName(stages, 'sufficiency_agent_r1'), experimentId)} />
     </div>
   )
 }
@@ -33,6 +40,7 @@ interface ConditionViewerProps {
   condition: ConditionId
   onConditionChange: (condition: ConditionId) => void
   availableConditions?: ConditionId[]
+  experimentId?: string
 }
 
 export default function ConditionViewer({
@@ -43,6 +51,7 @@ export default function ConditionViewer({
   condition,
   onConditionChange,
   availableConditions = ['single', 'no_revision', 'with_revision'],
+  experimentId,
 }: ConditionViewerProps) {
 
   const revisionPairs = useMemo(
@@ -96,7 +105,7 @@ export default function ConditionViewer({
       {condition === 'no_revision' ? (
         <div className="flow-stack">
           <div className="flow-label">Round 1</div>
-          <RoundGrid stages={result.multi_agent_no_revision.stages} />
+          <RoundGrid stages={result.multi_agent_no_revision.stages} experimentId={experimentId} />
           <div className="flow-arrow">↓</div>
           <div className="final-result-wrap">
             <AgentCard stage={result.multi_agent_no_revision.final} emphasis />
@@ -107,7 +116,7 @@ export default function ConditionViewer({
       {condition === 'with_revision' ? (
         <div className="flow-stack">
           <div className="flow-label">Round 1</div>
-          <RoundGrid stages={result.multi_agent_with_revision.stages} />
+          <RoundGrid stages={result.multi_agent_with_revision.stages} experimentId={experimentId} />
           <div className="flow-arrow">↓</div>
           <div className="flow-label">Round 2</div>
           <div className="agent-grid three-columns">
@@ -117,7 +126,7 @@ export default function ConditionViewer({
               return (
                 <AgentCard
                   key={r2}
-                  stage={after}
+                  stage={stageForDisplay(after, experimentId)}
                   previousAnswer={before?.answer ?? null}
                 />
               )

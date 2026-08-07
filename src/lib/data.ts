@@ -45,17 +45,23 @@ export const loadExperimentRootIndex = async (
   const experiment = manifest.experiments.find((item) => item.id === experimentId)
   if (!experiment) throw new Error(`Experiment not found: ${experimentId}`)
 
+  let root: RootIndex
   if (experiment.runs.length) {
     const selectedRun =
       experiment.runs.find((item) => item.id === run) ??
       experiment.runs.find((item) => item.id === experiment.default_run) ??
       experiment.runs[0]
     if (!selectedRun) throw new Error(`No run data found: ${experimentId}`)
-    return fetchJson<RootIndex>(selectedRun.path)
+    root = await fetchJson<RootIndex>(selectedRun.path)
+  } else {
+    if (!experiment.path) throw new Error(`Experiment data path is missing: ${experimentId}`)
+    root = await fetchJson<RootIndex>(experiment.path)
   }
 
-  if (!experiment.path) throw new Error(`Experiment data path is missing: ${experimentId}`)
-  return fetchJson<RootIndex>(experiment.path)
+  return {
+    ...root,
+    available_conditions: root.available_conditions ?? experiment.available_conditions,
+  }
 }
 export const loadExperimentAnalysis = (experiment: ExperimentSummary) =>
   experiment.summary_path
