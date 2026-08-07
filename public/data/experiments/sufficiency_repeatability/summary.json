@@ -1,5 +1,16 @@
 {
   "kind": "sufficiency_repeatability",
+  "generated_at": "2026-08-04T23:56:00.129974+00:00",
+  "models": [
+    "gemma_3_27b",
+    "llama_3_3_70b",
+    "mistral_small_3_2_24b",
+    "qwen3_8b",
+    "qwen3_14b",
+    "qwen3_32b",
+    "gpt_5_mini",
+    "gemini_3_5_flash_lite"
+  ],
   "rows": [
     {
       "model": "gemini_3_5_flash_lite",
@@ -10,7 +21,7 @@
       "changed_across_runs_rate": 0.028205128205128206,
       "mean_unique_answers": 1.028205128205128,
       "mean_pairwise_agreement": 0.9811965811965813,
-      "mean_accuracy_rate": 0.8837606837606835,
+      "mean_accuracy_rate": 0.8837606837606836,
       "mean_unknown_rate": 0.5957264957264957
     },
     {
@@ -33,7 +44,7 @@
       "all_runs_same_rate": 0.9564102564102565,
       "changed_across_runs_rate": 0.04358974358974359,
       "mean_unique_answers": 1.0435897435897437,
-      "mean_pairwise_agreement": 0.970940170940171,
+      "mean_pairwise_agreement": 0.9709401709401708,
       "mean_accuracy_rate": 0.8658119658119656,
       "mean_unknown_rate": 0.447863247863248
     },
@@ -46,7 +57,7 @@
       "changed_across_runs_rate": 0.08205128205128205,
       "mean_unique_answers": 1.082051282051282,
       "mean_pairwise_agreement": 0.9452991452991449,
-      "mean_accuracy_rate": 0.8529914529914526,
+      "mean_accuracy_rate": 0.8529914529914527,
       "mean_unknown_rate": 0.4880341880341881
     },
     {
@@ -57,8 +68,8 @@
       "all_runs_same_rate": 0.9461538461538461,
       "changed_across_runs_rate": 0.05384615384615385,
       "mean_unique_answers": 1.0564102564102564,
-      "mean_pairwise_agreement": 0.963247863247863,
-      "mean_accuracy_rate": 0.8803418803418803,
+      "mean_pairwise_agreement": 0.9632478632478632,
+      "mean_accuracy_rate": 0.8803418803418804,
       "mean_unknown_rate": 0.5675213675213675
     },
     {
@@ -69,7 +80,7 @@
       "all_runs_same_rate": 0.9487179487179487,
       "changed_across_runs_rate": 0.05128205128205128,
       "mean_unique_answers": 1.0538461538461539,
-      "mean_pairwise_agreement": 0.9649572649572651,
+      "mean_pairwise_agreement": 0.9649572649572649,
       "mean_accuracy_rate": 0.8769230769230766,
       "mean_unknown_rate": 0.5897435897435896
     },
@@ -106,7 +117,7 @@
       "changed_across_runs_rate": 0.04871794871794872,
       "mean_unique_answers": 1.0487179487179488,
       "mean_pairwise_agreement": 0.9675213675213675,
-      "mean_accuracy_rate": 0.8794871794871795,
+      "mean_accuracy_rate": 0.8794871794871796,
       "mean_unknown_rate": 0.5615384615384617
     },
     {
@@ -119,7 +130,7 @@
       "mean_unique_answers": 1.058974358974359,
       "mean_pairwise_agreement": 0.9606837606837605,
       "mean_accuracy_rate": 0.8666666666666667,
-      "mean_unknown_rate": 0.5504273504273506
+      "mean_unknown_rate": 0.5504273504273505
     },
     {
       "model": "qwen3_14b",
@@ -141,7 +152,7 @@
       "all_runs_same_rate": 0.958974358974359,
       "changed_across_runs_rate": 0.041025641025641026,
       "mean_unique_answers": 1.041025641025641,
-      "mean_pairwise_agreement": 0.9726495726495724,
+      "mean_pairwise_agreement": 0.9726495726495726,
       "mean_accuracy_rate": 0.8111111111111109,
       "mean_unknown_rate": 0.6333333333333333
     },
@@ -153,7 +164,7 @@
       "all_runs_same_rate": 0.9358974358974359,
       "changed_across_runs_rate": 0.0641025641025641,
       "mean_unique_answers": 1.0666666666666667,
-      "mean_pairwise_agreement": 0.9564102564102565,
+      "mean_pairwise_agreement": 0.9564102564102562,
       "mean_accuracy_rate": 0.8683760683760682,
       "mean_unknown_rate": 0.5606837606837608
     },
@@ -166,7 +177,7 @@
       "changed_across_runs_rate": 0.12307692307692308,
       "mean_unique_answers": 1.123076923076923,
       "mean_pairwise_agreement": 0.9179487179487181,
-      "mean_accuracy_rate": 0.8410256410256407,
+      "mean_accuracy_rate": 0.8410256410256409,
       "mean_unknown_rate": 0.6025641025641028
     },
     {

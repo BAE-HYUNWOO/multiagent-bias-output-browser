@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T03:34:07.620792+00:00",
+  "generated_at": "2026-08-07T02:52:15.285230+00:00",
   "all_processed": "/downloads/all_processed_results.zip",
   "all_source_outputs": null,
   "datasets": {
@@ -57,11 +57,5 @@
         "Sexual_orientation": "/downloads/kobbq/sexual-orientation.zip"
       }
     }
-  },
-  "experiments": {
-    "main": "/downloads/all_processed_results.zip",
-    "neutral_agent_ablation": "/downloads/neutral_agent_ablation_processed.zip",
-    "sufficiency_repeatability": "/downloads/sufficiency_repeatability_processed.zip"
-  },
-  "prompt_examples": "/downloads/prompt_examples.zip"
+  }
 }

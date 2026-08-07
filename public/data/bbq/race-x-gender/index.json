@@ -3485,7 +3485,7 @@
         "qwen3_32b",
         "qwen3_8b"
       ],
-      "has_condition_disagreement": false
+      "has_condition_disagreement": true
     },
     {
       "key": "31aaf040c4e539",

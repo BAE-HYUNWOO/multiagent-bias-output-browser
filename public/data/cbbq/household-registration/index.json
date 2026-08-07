@@ -32,7 +32,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -58,14 +60,16 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
         "qwen3_32b",
         "qwen3_8b"
       ],
-      "has_condition_disagreement": false
+      "has_condition_disagreement": true
     },
     {
       "key": "7ada36b03c02bc",
@@ -84,7 +88,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -110,7 +116,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -136,7 +144,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -162,7 +172,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -188,14 +200,16 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
         "qwen3_32b",
         "qwen3_8b"
       ],
-      "has_condition_disagreement": false
+      "has_condition_disagreement": true
     },
     {
       "key": "700f5487799b75",
@@ -214,7 +228,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -240,7 +256,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -266,7 +284,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -292,7 +312,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -318,7 +340,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -344,7 +368,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -370,7 +396,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -396,14 +424,16 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
         "qwen3_32b",
         "qwen3_8b"
       ],
-      "has_condition_disagreement": false
+      "has_condition_disagreement": true
     },
     {
       "key": "27fda1a11f6f20",
@@ -422,7 +452,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -448,7 +480,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -474,7 +508,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -500,7 +536,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -526,7 +564,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",

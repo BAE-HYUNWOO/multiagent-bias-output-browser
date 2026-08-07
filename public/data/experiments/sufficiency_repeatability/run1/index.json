@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-05T04:17:40.218263+00:00",
+  "generated_at": "2026-08-04T23:55:51.179472+00:00",
   "experiment_id": "sufficiency_repeatability",
   "experiment_label": "Sufficiency Repeatability",
   "run": "1",
@@ -22,14 +22,14 @@
       "pair_count": 55,
       "item_count": 110,
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ]
     },
     {
@@ -40,14 +40,14 @@
       "pair_count": 70,
       "item_count": 140,
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ]
     },
     {
@@ -58,26 +58,26 @@
       "pair_count": 70,
       "item_count": 140,
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ]
     }
   ],
   "models": [
-    "gemini_3_5_flash_lite",
     "gemma_3_27b",
-    "gpt_5_mini",
     "llama_3_3_70b",
     "mistral_small_3_2_24b",
+    "qwen3_8b",
     "qwen3_14b",
     "qwen3_32b",
-    "qwen3_8b"
+    "gpt_5_mini",
+    "gemini_3_5_flash_lite"
   ],
   "totals": {
     "categories": 39,

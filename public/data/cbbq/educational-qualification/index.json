@@ -312,7 +312,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -338,7 +340,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -364,7 +368,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -390,7 +396,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -416,7 +424,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -442,7 +452,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -468,7 +480,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -494,7 +508,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -520,7 +536,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",
@@ -546,7 +564,9 @@
         }
       },
       "models": [
+        "gemini_3_5_flash_lite",
         "gemma_3_27b",
+        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
         "qwen3_14b",

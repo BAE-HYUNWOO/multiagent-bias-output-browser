@@ -4,14 +4,14 @@
   "pair_count": 5,
   "item_count": 10,
   "models": [
-    "gemini_3_5_flash_lite",
     "gemma_3_27b",
-    "gpt_5_mini",
     "llama_3_3_70b",
     "mistral_small_3_2_24b",
+    "qwen3_8b",
     "qwen3_14b",
     "qwen3_32b",
-    "qwen3_8b"
+    "gpt_5_mini",
+    "gemini_3_5_flash_lite"
   ],
   "download": null,
   "problems": [
@@ -32,14 +32,14 @@
         }
       },
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ],
       "has_condition_disagreement": true
     },
@@ -60,14 +60,14 @@
         }
       },
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ],
       "has_condition_disagreement": true
     },
@@ -88,16 +88,16 @@
         }
       },
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ],
-      "has_condition_disagreement": true
+      "has_condition_disagreement": false
     },
     {
       "key": "bb1e2ca7f44f76",
@@ -116,14 +116,14 @@
         }
       },
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ],
       "has_condition_disagreement": true
     },
@@ -144,14 +144,14 @@
         }
       },
       "models": [
-        "gemini_3_5_flash_lite",
         "gemma_3_27b",
-        "gpt_5_mini",
         "llama_3_3_70b",
         "mistral_small_3_2_24b",
+        "qwen3_8b",
         "qwen3_14b",
         "qwen3_32b",
-        "qwen3_8b"
+        "gpt_5_mini",
+        "gemini_3_5_flash_lite"
       ],
       "has_condition_disagreement": true
     }
